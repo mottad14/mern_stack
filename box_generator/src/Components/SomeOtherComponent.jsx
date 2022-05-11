@@ -33,7 +33,7 @@ const SomeOtherComponent = props => {
     <div>
         <div>
         <form onSubmit={submitHandler}>
-        <input type="text" onChange={(event)=>{setInput(event.target.value)}} />
+        <input type="text" onChange={(event)=>{setInput(event.target.value)}} value={input} />
         <input type="submit"/>
         </form>
         </div>
