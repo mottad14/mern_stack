@@ -1,17 +1,19 @@
 import react, { useEffect, useState } from 'react';
 import axios from "axios";
+import { useParams } from "react-router";
     
 const SWPeople = (props) => {
-    const [peopleData, setPeopleData] = useState();
+    const [peopleData, setPeopleData] = useState({});
+    const {Id} = useParams();
 
     useEffect(()=> {
-        console.log("use effect is running for the Star Wars character:"+ props.PeopleId);
-        axios.get("https://swapi.dev/api/people/"+props.PeopleId)
+        console.log("use effect is running for the Star Wars character:"+Id);
+        axios.get("https://swapi.dev/api/people/"+Id)
         .then(response=>{
         console.log(response.data)
         setPeopleData(response.data)})      
         .catch(err=> console.log("These aren't the droids you're looking for.", err))
-    }, [])
+    }, [Id])
 
     return (
         <>

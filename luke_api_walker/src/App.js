@@ -19,10 +19,10 @@ function App() {
   const createRequest= (event) =>{
       event.preventDefault();
       if(criteria === "planets"){
-        history.push("/planets")
+        history.push("/planets/"+currentId)
       }
       else if (criteria === "people") {
-        history.push("/people")
+        history.push("/people/"+currentId)
       }
     };
   return (
@@ -42,11 +42,11 @@ function App() {
       </form>
       </div>
       <Switch>
-        <Route path="/people">
-          <SWPeople PeopleId={currentId}/>
+        <Route exact path="/people/:Id" >
+          <SWPeople/>
         </Route>
-        <Route exact path="/planets">
-          <SWPlanet PlanetId={currentId}/>
+        <Route exact path="/planets/:Id">
+          <SWPlanet/>
         </Route>
       </Switch>
       
