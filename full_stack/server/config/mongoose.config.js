@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 //Below is the Database that we connect to with Mongoose 
 
-mongoose.connect("mongodb://localhost/hello_mongoose_db", {
+mongoose.connect("mongodb://localhost/full_stack_db", {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 })
