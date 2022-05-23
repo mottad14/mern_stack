@@ -1,9 +1,37 @@
 import React from "react";
 import axios from "axios";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+//This way is the more effecient way that I completed afterward - taken from Platform
+// const ProductList = (props) => {
+//     const {removeFromDom} = props;
+// }
+//     const deleteProduct = (productId) =>{
+//         axios.delete("http://localhost:8000/api/products/delete/" + productId )
+//         .then(res => {
+//             removeFromDom(productId)
+//         })
+//         .catch(err => console.error(err))
+//     }
+
+//     return(
+//         <div>
+//             {props.products.map((product, idx)=> {
+//                 return <div key={idx}>
+//                     <Link to={"/api/products/"+product._id}>
+//                         {product.title} - {product.price}
+//                     </Link>
+//                     |
+//                     <button onClick={(e)=> (deleteProduct(product._id))}>
+//                         Delete
+//                     </button>
+//                 </div>
+//             })}
+//         </div>
+//     )
+// export default ProductList;
 
 export default(props)=>{
-    const history = useHistory();
     return (
         <ul>
        {(props.products).map((prod, i) => {
@@ -14,7 +42,6 @@ export default(props)=>{
         e.preventDefault();
         axios.delete("http://localhost:8000/api/products/delete/"+prod._id)
             .then(res => {console.log(res);
-                console.log("We're about to push history here.")
                 //the following line is vanilla JS used to reload the page.
                 //Another idea that I just got to refresh the page is to create a useState variable
                 //that keeps adding everytime that a new product is added to the list (not certain how to best do this)

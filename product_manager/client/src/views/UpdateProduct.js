@@ -7,7 +7,6 @@ const UpdateProduct = (props) => {
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("")
-
     
     useEffect(() => {
         axios.get('http://localhost:8000/api/products/'+ _id)
