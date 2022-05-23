@@ -3,6 +3,7 @@ import React from "react";
 import './App.css';
 import Main from './views/Main';
 import SingleProduct from "./views/SingleProduct";
+import UpdateProduct from "./views/UpdateProduct";
 
 function App() {
   return (
@@ -15,6 +16,13 @@ function App() {
 
       <Route exact path="/api/products/:_id">
         <SingleProduct/>
+      </Route>
+
+      <Route exact path="/api/products/update/:_id">
+        <UpdateProduct/>
+      </Route>
+
+      <Route exact path="/api/products/delete/:_id">
       </Route>
     </div>
   );

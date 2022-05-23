@@ -13,7 +13,10 @@ export default () =>{
         price, 
         description
     })
-    .then(response=>console.log("Response: ", response))
+    .then(response=>{
+        console.log("Response: ", response);
+        //the following line causes the page to reload.
+            window.location.reload(false);})
     .catch(error => console.log("Error: ", error))
 }
 

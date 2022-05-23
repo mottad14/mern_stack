@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams } from "react-router-dom";
+import {Link} from "react-router-dom";
+
 
     
 const SingleProduct = (props) => {
@@ -18,6 +20,7 @@ const SingleProduct = (props) => {
             <p>Title: {product.title}</p>
             <p>Price: {product.price}</p>
             <p>Description: {product.description}</p>
+            <Link to={`/api/products/update/${product._id}`}> <button>Update Product</button> </Link>
         </div>
     )
 }
