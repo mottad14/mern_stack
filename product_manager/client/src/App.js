@@ -1,10 +1,21 @@
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import React from "react";
 import './App.css';
-import ProductForm from './components/ProductForm';
+import Main from './views/Main';
+import SingleProduct from "./views/SingleProduct";
 
 function App() {
   return (
     <div className="App">
-      <ProductForm/>
+      {/* <Main></Main> */}
+
+      <Route exact path="/api/products/">
+        <Main/>
+      </Route>
+
+      <Route exact path="/api/products/:_id">
+        <SingleProduct/>
+      </Route>
     </div>
   );
 }
