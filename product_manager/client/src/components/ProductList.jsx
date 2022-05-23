@@ -16,6 +16,9 @@ export default(props)=>{
             .then(res => {console.log(res);
                 console.log("We're about to push history here.")
                 //the following line is vanilla JS used to reload the page.
+                //Another idea that I just got to refresh the page is to create a useState variable
+                //that keeps adding everytime that a new product is added to the list (not certain how to best do this)
+                //But whenever state changes, the page reloads.
                 window.location.reload(false);})
             .catch(err => console.error(err))}}> Delete </button>
                 </h2>)
