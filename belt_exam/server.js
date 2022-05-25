@@ -7,7 +7,7 @@ app.use(cors());
 
 //These requirements NEED to be below the lines above to ensure that all our dependencies are used for models and routes
 require("./server/config/mongoose.config");
-require("./server/routes/author.routes")(app);
+require("./server/routes/pet.routes")(app);
 
 // app.get("/api", (req, res) => {
 //   res.json({

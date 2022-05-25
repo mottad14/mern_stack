@@ -2,17 +2,19 @@
 // Lists and Forms without reloading the page 
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import AuthorForm from '../components/AuthorForm';
-import AuthorList from '../components/AuthorList';
+import PetList from '../components/PetList';
+import {Link} from "react-router-dom";
+
     
 export default () => {
-    const [authors, setAuthors] = useState([]);
+    const [pets, setPets] = useState([]);
     const [loaded, setLoaded] = useState(false);
     
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/authors/')
+        axios.get('http://localhost:8000/api/pets')
             .then(res=>{
-                setAuthors(res.data.authors);
+                console.log(res.data.pets)
+                setPets(res.data.pets);
                 setLoaded(true);
             })
             .catch(err => console.error(err));
@@ -22,25 +24,15 @@ export default () => {
     // as a prop to our AuthorList component so that when the list displays on this page
     // and we delete something, our State will change (setProducts is used for this) and 
     // thus triggers the page to change and update
-    const removeFromDom = authorId => {
-        setAuthors(authors.filter(author => author._id != authorId));
-    }
-    
-    //For recycling component purposes, the following createAuthor function is added and called
-    // as a component to insert into our form submission as a prop 
-    const createAuthor = author => {
-        axios.post("http://localhost:8000/api/authors/new", author)
-        .then(res=>{
-            console.log(res.data)
-            setAuthors([...authors, res.data])
-        })
+    const removeFromDom = petId => {
+        setPets(pets.filter(pet => pet._id != petId));
     }
 
     return (
         <div>
-           <AuthorForm onSubmitProp={createAuthor} initialName=""/>
+            <h1>Pet Shelter       |   <Link to={"/api/pets/create"}> add a pet to the shelter </Link></h1>
            <hr/>
-           {loaded && <AuthorList authors={authors} removeFromDom={removeFromDom}/>}
+           {loaded && <PetList pets={pets} removeFromDom={removeFromDom}/>}
         </div>
     );
 }
