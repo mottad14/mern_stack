@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
@@ -8,7 +8,6 @@ function App() {
       <Switch>
         <Route exact path="/" />
           <Main></Main>
-
       </Switch>
     </div>
   );
