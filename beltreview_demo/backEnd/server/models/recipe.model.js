@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const { timeStamp } = require("console");
+
 
 const IngredientSchema = new mongoose.Schema({
     amount: {
@@ -12,7 +14,7 @@ const IngredientSchema = new mongoose.Schema({
     measurement:{
         type: String,
         required: true
-    },
+    }
 })
 
 const RecipeSchema = new mongoose.Schema({
@@ -40,10 +42,12 @@ const RecipeSchema = new mongoose.Schema({
     },
     
     category:{
-        type: String
+        type: String,
+        required: true
     },
     imgURL:{
-        type:String
+        type:String,
+        required: true
     }, 
     ingredients:{
         type:[IngredientSchema]

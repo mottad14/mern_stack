@@ -9,22 +9,20 @@ const Main = (props) => {
         axios.get("http://localhost:8000/api/recipes/all")
         .then(res=>{
             console.log(res.data);
+            setRecipes(res.data);
         })
         .catch(err=>console.log(err))
     }, [])
 
     return(
         <div className="d-flex justify-content-around flex-wrap w-75 mx-auto">
-            main page here
-            
-                {
-                    recipes.map((item,i)=>{
-                        return RecipePreview
-                    })
-                }
-            
+            {
+                recipes.map((item,i)=>{
+                    return <RecipePreview key={item._id} data={item} />
+                })
+            }
         </div>
     )
 }
 
-export default App;
+export default Main;
