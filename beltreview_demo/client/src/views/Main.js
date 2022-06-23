@@ -8,7 +8,6 @@ const Main = (props) => {
     useEffect(()=>{
         axios.get("http://localhost:8000/api/recipes/all")
         .then(res=>{
-            console.log(res.data);
             setRecipes(res.data);
         })
         .catch(err=>console.log(err))
