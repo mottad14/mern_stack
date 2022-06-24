@@ -1,96 +1,97 @@
 /* Our Imported Background, Below */
 
-// @import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
 
-// .cubeDad {
-//   background-color: #e7b840;
-//   position: relative;
-//   height: 100vh;
-//   overflow: hidden;
-//   font-family: 'Montserrat', sans-serif;
-// }
+.cubeDad {
+  background-color: #e7b840;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+}
 
-// .hero__title {
-//   color: #fff;
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   font-size: 50px;
-// }
+.hero__title {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+}
 
-// .cube {
-//   position: absolute;
-//   top: 80vh;
-//   left: 45vw;
-//   width: 10px;
-//   height: 8px;
-//   border: solid 1px darken(#0040C1, 8%);
-//   border-radius: 40%;
-//   transform-origin: top left;
-//   transform: scale(0) rotate(0deg) translate(-50%, -50%);
-//   animation: circle 12s ease-in forwards infinite;
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 8px;
+  border: solid 1px darken(#0040C1, 8%);
+  border-radius: 40%;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: circle 12s ease-in forwards infinite;
   
-//   &:nth-child(2n) {
-//     border-color: lighten(#bae059, 10%);
-//   }
+  &:nth-child(2n) {
+    border-color: lighten(#bae059, 10%);
+  }
   
-//   &:nth-child(2) {
-//     border-color: lighten(#d759e0, 10%);
-//     animation-delay: 2s;
-//     left: 25vw;
-//     top: 40vh;
-//   }
+  &:nth-child(2) {
+    border-color: lighten(#d759e0, 10%);
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+  }
   
-//   &:nth-child(3) {
-//     animation-delay: 4s;
-//     left: 75vw;
-//     top: 50vh;
-//   }
+  &:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+  }
   
-//   &:nth-child(4) {
-//     animation-delay: 6s;
-//     left: 90vw;
-//     top: 10vh;
-//   }
+  &:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+  }
   
-//   &:nth-child(5) {
-//     animation-delay: 8s;
-//     left: 10vw;
-//     top: 85vh;
-//   }
+  &:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+  }
   
-//   &:nth-child(6) {
-//     animation-delay: 10s;
-//     left: 50vw;
-//     top: 10vh;
-//   }
-// }
+  &:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+  }
+}
 
-// @keyframes cube {
-//   from {
-//     transform: scale(0) rotate(0deg) translate(-50%, -50%);   
-//     opacity: 1;
-//   }
-//   to {
-//     transform: scale(20) rotate(960deg) translate(-50%, -50%); 
-//     opacity: 0;
-//   }
-// }
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);   
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%); 
+    opacity: 0;
+  }
+}
 // Everything above is from our imported background effect
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Poppins&display=swap');
 
 .App {
+  font-family: 'BIZ UDGothic', sans-serif;
+  font-family: 'Poppins', sans-serif;
   z-index: 1;
   text-align: center;
 }
 
 .recipePreview{
   z-index: 1;
-  border: 3px solid black;
+  border: 3px solid rgb(177, 177, 177);
   min-height: 300px;
   width: 250px;
-  background-color: darksalmon;
+  background-color: rgb(254, 194, 10);
   border-left-style: dotted; 
   border-right-style: dotted;
   border-radius: 10%; 
@@ -104,6 +105,11 @@
 .recipePreview >div{
   align-items: center;
 
+}
+
+.Logo{
+  margin-left: 10px;
+  height: 30px;
 }
 
 .sticky{

@@ -24,13 +24,7 @@ function App() {
             <Route exact path="/create">
               <Create/>
             </Route>
-
           </Switch>
-          <div className="cube"/>
-          <div className="cube"/>
-          <div className="cube"/>
-          <div className="cube"/>
-          <div className="cube"/>
        </div>
     </div>
   );
